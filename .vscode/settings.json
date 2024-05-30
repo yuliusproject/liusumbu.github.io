@@ -1,0 +1,13 @@
+{
+    "php.debug.executablePath": "/usr/bin/php",
+    "php.debug.port": 9000,
+    "php.debug.type": "chrome",
+    "php.debug.request": "launch",
+    "php.debug.port": 9000,
+    "php.debug.type": "chrome",
+    "php.debug.request": "launch",
+    "php.debug.port": 9000,
+    "php.debug.type": "chrome",
+    "php.debug.request": "launch",
+}
+

@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #444;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.kotak {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    background: linear-gradient(to right, #8e44ad, #3498db);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+ul li a:hover {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+ul li ul.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #3498db;
+    display: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    padding: 10px 15px;
+}
+
+.judul {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.blok {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    
+}
+
+.blok h2 {
+    color: #6a11cb;
+    margin-bottom: 20px;
+}
+
+.kiri {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kiri img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #6a11cb;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.kanan {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content horizontally */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+table {
+    margin: 20px 0;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.pendidikan, .pengalaman, .keahlian {
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .kotak {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .kiri, .kanan {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .kanan {
+        margin: 0;
+    }
+}

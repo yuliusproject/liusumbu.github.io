@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px; /* Set width to your preference */
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        form input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn-primary {
+            background-color: #007bff;
+            margin-top: 20px;
+        }
+
+        .login-btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .login-btn-secondary {
+            background-color: #dc3545;
+            margin-top: 10px;
+        }
+
+        .login-btn-secondary:hover {
+            background-color: #bd2130;
+        }
+
+        .notification {
+            margin-top: 10px;
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<?php
+session_start();
+$home_url = "home.html";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if username and password are correct (For demonstration, let's assume username: admin, password: 1234)
+    if ($_POST['username'] === 'admin' && $_POST['password'] === '1234') {
+        // Set session variable to indicate successful login
+        $_SESSION['login_success'] = "Login berhasil!";
+        // Redirect to home page
+        header("Location: $home_home.html");
+        exit;
+    } else {
+        // Display error message
+        $error_message = "Username atau password salah.";
+    }
+}
+?>
+<div class="login-container">
+    <h2>Login</h2>
+    <?php if (isset($error_message)): ?>
+        <div class="error"><?php echo $error_message; ?></div>
+    <?php endif; ?>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button class="login-btn login-btn-primary" type="submit"><a href="home.html">Login</a></button>
+        <button class="login-btn login-btn-secondary" type="button">Cancel</button>
+    </form>
+    <div class="notification" id="login-notification">
+        <?php
+        if (isset($_SESSION['login_success'])) {
+            echo $_SESSION['login_success'];
+            unset($_SESSION['login_success']);
+        }
+        ?>
+    </div>
+</div>
+</body>
+</html>
